@@ -1,4 +1,4 @@
 # This is used for Google Cloud auto deployment. When a change is pushed, it updates my google bucket and publishes the change(s)
 steps:
   - name: gcr.io/cloud-builders/gsutil
-    args: ["-m", "rsync", "-r", "-c", "-d", ".", "gs://tucker.codes"]
+    args: ["-m", "rsync", "-r", "-c", "-d", ".", "gs://www.tuckerdotcodes.com"]
