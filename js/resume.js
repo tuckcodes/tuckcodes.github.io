@@ -1,8 +1,8 @@
-(function($) {
+(function ($) {
   "use strict"; // Start of use strict
 
   // Smooth scrolling using jQuery easing
-  $('a.js-scroll-trigger[href*="#"]:not([href="#"])').click(function() {
+  $('a.js-scroll-trigger[href*="#"]:not([href="#"])').click(function () {
     if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
       var target = $(this.hash);
       target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
@@ -16,7 +16,7 @@
   });
 
   // Closes responsive menu when a scroll trigger link is clicked
-  $('.js-scroll-trigger').click(function() {
+  $('.js-scroll-trigger').click(function () {
     $('.navbar-collapse').collapse('hide');
   });
 
@@ -26,3 +26,29 @@
   });
 
 })(jQuery); // End of use strict
+
+// START ACCORDION
+
+$('.accordion-item .heading').on('click', function (e) {
+  e.preventDefault();
+
+  // Add the correct active class
+  if ($(this).closest('.accordion-item').hasClass('active')) {
+    // Remove active classes
+    $('.accordion-item').removeClass('active');
+  } else {
+    // Remove active classes
+    $('.accordion-item').removeClass('active');
+
+    // Add the active class
+    $(this).closest('.accordion-item').addClass('active');
+  }
+
+  // Show the content
+  var $content = $(this).next();
+  $content.slideToggle(100);
+  $('.accordion-item .content').not($content).slideUp('fast');
+
+});
+
+// END ACCORDION
