@@ -24,7 +24,7 @@ body {
 .accordion {
     width: 100%;
     max-width: 75rem;
-    margin: auto, auto, auto, 0;
+    margin: 5%, auto, auto, 0;
     padding: 2rem;
 }
 
